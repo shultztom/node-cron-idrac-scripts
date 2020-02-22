@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "docker:build": "docker build -t node-cron-idrac-scripts .",
-    "docker:start": "./docker-start.sh"
+    "docker:build": "docker build -t tks23/node-cron-idrac-scripts:latest .",
+    "docker:start": "./docker-start.sh",
+    "docker:push": "docker push tks23/node-cron-idrac-scripts:latest"
   },
   "author": "",
   "license": "ISC",
