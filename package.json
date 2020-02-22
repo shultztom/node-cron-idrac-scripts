@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "docker:build": "docker build -t node-cron-idrac-scripts .",
+    "docker:start": "./docker-start.sh"
   },
   "author": "",
   "license": "ISC",
