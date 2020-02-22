@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "docker:build": "docker build -t tks23/node-cron-idrac-scripts:latest .",
+    "docker:build": "docker build -t tks23/node-cron-idrac-scripts:stable .",
     "docker:start": "./docker-start.sh",
-    "docker:push": "docker push tks23/node-cron-idrac-scripts:latest"
+    "docker:push": "docker push tks23/node-cron-idrac-scripts:stable",
+    "oc:import-image": "oc import-image node-cron-idrac-scripts:stable"
   },
   "author": "",
   "license": "ISC",
