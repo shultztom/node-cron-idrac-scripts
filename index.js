@@ -21,8 +21,5 @@ healthCheck();
 
 cron.schedule("*/2 * * * *", () => {
   setFans();
-});
-
-cron.schedule("*/5 * * * *", () => {
   healthCheck();
 });
