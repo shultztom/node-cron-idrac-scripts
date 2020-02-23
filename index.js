@@ -7,8 +7,10 @@ shell.env["idracPass"] = process.env.IDRAC_PASS;
 // First Run
 shell.exec(__dirname + "/r610-set-fans.sh");
 shell.exec(__dirname + "/r710-set-fans.sh");
+shell.exec(__dirname + "/r310-set-fans.sh");
 
 cron.schedule("*/2 * * * *", () => {
   shell.exec(__dirname + "/r610-set-fans.sh");
   shell.exec(__dirname + "/r710-set-fans.sh");
+  shell.exec(__dirname + "/r310-set-fans.sh");
 });
