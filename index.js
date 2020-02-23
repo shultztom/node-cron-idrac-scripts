@@ -23,6 +23,6 @@ cron.schedule("*/2 * * * *", () => {
   setFans();
 });
 
-cron.schedule("0 */8 * * *", () => {
+cron.schedule("*/5 * * * *", () => {
   healthCheck();
 });
