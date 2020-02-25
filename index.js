@@ -4,8 +4,8 @@ const cron = require("node-cron");
 
 shell.env["idracPass"] = process.env.IDRAC_PASS;
 const setFans = () => {
-  shell.exec(__dirname + "/r310-set-fans.sh");
-  shell.exec(__dirname + "/r610-set-fans.sh");
+  // shell.exec(__dirname + "/r310-set-fans.sh");
+  // shell.exec(__dirname + "/r610-set-fans.sh");
   shell.exec(__dirname + "/r710-set-fans.sh");
 };
 

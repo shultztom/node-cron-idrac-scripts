@@ -27,9 +27,9 @@ fi
 # echo ""
 
 # Fan config
-STATICSPEEDBASE16="0x0f"
+STATICSPEEDBASE16="0x10"
 SENSORNAME="Ambient"
-TEMPTHRESHOLD="29"
+TEMPTHRESHOLD="27"
 
 T=$(ipmitool -I lanplus -H $IDRACIP -U $IDRACUSER -P $IDRACPASSWORD sdr type temperature | grep $SENSORNAME | cut -d"|" -f5 | cut -d" " -f2)
 echo "$IDRACIP: $T °C"
@@ -44,9 +44,3 @@ if [[ $T > $TEMPTHRESHOLD ]]
     echo "--> set static fan speed for $IDRACIP"
     ipmitool -I lanplus -H $IDRACIP -U $IDRACUSER -P $IDRACPASSWORD raw 0x30 0x30 0x02 0xff $STATICSPEEDBASE16
 fi
-
-echo ""
-echo "##############################"
-echo "# Done setting fans for r710 #"
-echo "##############################"
-echo ""

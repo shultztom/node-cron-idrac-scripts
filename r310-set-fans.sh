@@ -39,8 +39,8 @@ fi
 # echo ""
 
 # Fan config
-STATICSPEEDBASE16="0x11"
-TEMPTHRESHOLD="29"
+STATICSPEEDBASE16="0x15"
+TEMPTHRESHOLD="27"
 
 T=$(ipmitool -I lanplus -H $IDRACIP -U $IDRACUSER -P $IDRACPASSWORD -y $IPMIEK sdr type temperature |grep Ambient |grep degrees |grep -Po '\d{2}' | tail -1)
 echo "$IDRACIP: $T °C"
@@ -55,8 +55,3 @@ if [[ $T > $TEMPTHRESHOLD ]]
     echo "--> set static fan speed for $IDRACIP"
     ipmitool -I lanplus -H $IDRACIP -U $IDRACUSER -P $IDRACPASSWORD raw 0x30 0x30 0x02 0xff $STATICSPEEDBASE16
 fi
-
-echo "##############################"
-echo "# Done setting fans for r310 #"
-echo "##############################"
-echo ""
